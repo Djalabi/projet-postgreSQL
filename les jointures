@@ -1,0 +1,172 @@
+#################################################
+# Jointure simple en utilisants WHERE           #
+#################################################
+jointure de deux tables
+-----------------------------------------------------------------------------------
+SELECT etudiants.nom,etudiants.prenom, etudiants.sexe, etudiants.adresse, niveau.libelle as niveau
+FROM etudiants , niveau
+WHERE  niveau.id = etudiants.id_niveau; 
+
+    nom     |    prenom    |    sexe     |               adresse                | niveau 
+------------+--------------+-------------+--------------------------------------+--------
+ Rosaline   | Zecchii      | Male        | rzecchii0@sciencedirect.com          | 1
+ Jada       | Langthorn    | Male        | jlangthorn1@arstechnica.com          | 1
+ Jocelyn    | Hrihorovich  | Female      | jhrihorovich2@networkadvertising.org | 2
+ Kerry      | Coffin       | Female      | kcoffin3@washingtonpost.com          | 1
+ Juliet     | Fasey        | Male        | jfasey4@surveymonkey.com             | 3
+ June       | Screas       | Female      | jscreas5@bandcamp.com                | 2
+ Alf        | Garmanson    | Female      | agarmanson6@fema.gov                 | 1
+ Tandie     | Waldie       | Female      | twaldie7@cargocollective.com         | 2
+ Yasmeen    | Ghidetti     | Male        | yghidetti8@mashable.com              | 2
+ Cris       | Piele        | Male        | cpiele9@sciencedirect.com            | 2
+ Rochelle   | Caps         | Female      | rcapsa@discovery.com                 | 2
+ Saba       | Jermyn       | Male        | sjermynb@sun.com                     | 3
+ Guthrey    | Levine       | Male        | glevinec@bbb.org                     | 2
+ Cherey     | Merkel       | Female      | cmerkeld@lycos.com                   | 1
+ Issie      | Bodker       | Male        | ibodkere@slashdot.org                | 2
+ Janetta    | Lamb-shine   | Female      | jlambshinef@tamu.edu                 | 1
+ Querida    | Goacher      | Male        | qgoacherg@ovh.net                    | 3
+ Gordie     | Polson       | Female      | gpolsonh@netscape.com                | 1
+ Birk       | Jewitt       | Male        | bjewitti@freewebs.com                | 3
+ Brietta    | Stiebler     | Female      | bstieblerj@yahoo.co.jp               | 2
+ Bert       | Garaghan     | Female      | bgaraghank@sciencedaily.com          | 1
+ Gerhardt   | Bassett      | Female      | gbassettl@youtube.com                | 1
+ Stevy      | Salan        | Genderfluid | ssalanm@yolasite.com                 | 3
+ Brennan    | Karlowicz    | Male        | bkarlowiczn@ovh.net                  | 1
+ Guinevere  | Farenden     | Female      | gfarendeno@is.gd                     | 1
+ Cortney    | Cafferky     | Male        | ccafferkyp@reference.com             | 2
+ Denis      | Babbs        | Male        | dbabbsq@forbes.com                   | 2
+ Xena       | Hinz         | Female      | xhinzr@blog.com                      | 1
+ Aurelie    | Boobier      | Female      | aboobiers@npr.org                    | 2
+ Kai        | Hassin       | Male        | khassint@lulu.com                    | 1
+ Nataline   | Vase         | Female      | nvaseu@rakuten.co.jp                 | 1
+ Marieann   | Vitall       | Female      | mvitallv@google.es                   | 2
+ Biron      | Rosenfarb    | Genderqueer | brosenfarbw@etsy.com                 | 2
+ Giovanni   | Footitt      | Male        | gfootittx@xrea.com                   | 3
+ Shirlee    | Carneck      | Male        | scarnecky@t.co                       | 1
+ Bamby      | Manske       | Genderfluid | bmanskez@tuttocitta.it               | 1
+ Harlen     | Dowell       | Female      | hdowell10@163.com                    | 2
+ Rossie     | Gilffilland  | Female      | rgilffilland11@moonfruit.com         | 1
+ Anthiathia | Stansell     | Female      | astansell12@google.co.uk             | 2
+ Evonne     | Duffitt      | Male        | eduffitt13@nationalgeographic.com    | 1
+ Carmelina  | Schanke      | Male        | cschanke14@jalbum.net                | 3
+ Meade      | Abramchik    | Male        | mabramchik15@ow.ly                   | 1
+ Dorolice   | Aitken       | Male        | daitken16@cnet.com                   | 2
+
+
+
+
+#################
+# LEFT join     #
+################
+Joiture de deux tables : etudiants, niveau
+-----------------------------------------------------------------------------------
+SELECT etudiants.nom,etudiants.prenom, etudiants.sexe, etudiants.adresse, niveau.libelle as niveau
+    FROM etudiants LEFT JOIN niveau  ON  niveau.id = etudiants.id_niveau;
+    
+-----------------------------------------------------------------------------------------
+    nom     |    prenom    |    sexe     |               adresse                | niveau 
+------------+--------------+-------------+--------------------------------------+--------
+ Rosaline   | Zecchii      | Male        | rzecchii0@sciencedirect.com          | 1
+ Jada       | Langthorn    | Male        | jlangthorn1@arstechnica.com          | 1
+ Jocelyn    | Hrihorovich  | Female      | jhrihorovich2@networkadvertising.org | 2
+ Kerry      | Coffin       | Female      | kcoffin3@washingtonpost.com          | 1
+ Juliet     | Fasey        | Male        | jfasey4@surveymonkey.com             | 3
+ June       | Screas       | Female      | jscreas5@bandcamp.com                | 2
+ Alf        | Garmanson    | Female      | agarmanson6@fema.gov                 | 1
+ Tandie     | Waldie       | Female      | twaldie7@cargocollective.com         | 2
+ Yasmeen    | Ghidetti     | Male        | yghidetti8@mashable.com              | 2
+ Cris       | Piele        | Male        | cpiele9@sciencedirect.com            | 2
+ Rochelle   | Caps         | Female      | rcapsa@discovery.com                 | 2
+ Saba       | Jermyn       | Male        | sjermynb@sun.com                     | 3
+ Guthrey    | Levine       | Male        | glevinec@bbb.org                     | 2
+ Cherey     | Merkel       | Female      | cmerkeld@lycos.com                   | 1
+ Issie      | Bodker       | Male        | ibodkere@slashdot.org                | 2
+ Janetta    | Lamb-shine   | Female      | jlambshinef@tamu.edu                 | 1
+ Querida    | Goacher      | Male        | qgoacherg@ovh.net                    | 3
+ Gordie     | Polson       | Female      | gpolsonh@netscape.com                | 1
+ Birk       | Jewitt       | Male        | bjewitti@freewebs.com                | 3
+ Brietta    | Stiebler     | Female      | bstieblerj@yahoo.co.jp               | 2
+ Bert       | Garaghan     | Female      | bgaraghank@sciencedaily.com          | 1
+ Gerhardt   | Bassett      | Female      | gbassettl@youtube.com                | 1
+ Stevy      | Salan        | Genderfluid | ssalanm@yolasite.com                 | 3
+ Brennan    | Karlowicz    | Male        | bkarlowiczn@ovh.net                  | 1
+ Guinevere  | Farenden     | Female      | gfarendeno@is.gd                     | 1
+ Cortney    | Cafferky     | Male        | ccafferkyp@reference.com             | 2
+ Denis      | Babbs        | Male        | dbabbsq@forbes.com                   | 2
+ Xena       | Hinz         | Female      | xhinzr@blog.com                      | 1
+ Aurelie    | Boobier      | Female      | aboobiers@npr.org                    | 2
+ Kai        | Hassin       | Male        | khassint@lulu.com                    | 1
+ Nataline   | Vase         | Female      | nvaseu@rakuten.co.jp                 | 1
+ Marieann   | Vitall       | Female      | mvitallv@google.es                   | 2
+ Biron      | Rosenfarb    | Genderqueer | brosenfarbw@etsy.com                 | 2
+ Giovanni   | Footitt      | Male        | gfootittx@xrea.com                   | 3
+ Shirlee    | Carneck      | Male        | scarnecky@t.co                       | 1
+ Bamby      | Manske       | Genderfluid | bmanskez@tuttocitta.it               | 1
+ Harlen     | Dowell       | Female      | hdowell10@163.com                    | 2
+ Rossie     | Gilffilland  | Female      | rgilffilland11@moonfruit.com         | 1
+ Anthiathia | Stansell     | Female      | astansell12@google.co.uk             | 2
+ Evonne     | Duffitt      | Male        | eduffitt13@nationalgeographic.com    | 1
+
+
+#################
+# Inner join   #
+################
+Joiture de trois tables : etudiants, niveau et filieres
+---------------------------------------------------------------------------------------------------------------------------------
+
+<<<<<<< HEAD
+    SELECT etudiants.nom,etudiants.prenom, etudiants.sexe, etudiants.adresse, niveau.libelle as niveau, filieres.name as filiere
+        FROM ((etudiants INNER JOIN niveau  ON  niveau.id = etudiants.id_niveau)
+        INNER JOIN filieres ON filieres.id = etudiants.id_niveau); 
+=======
+SELECT etudiants.nom, etudiants.prenom, etudiants.sexe, etudiants.adresse, niveau.libelle as niveau, filieres.name as filiere
+    FROM ((etudiants INNER JOIN niveau  ON  niveau.id = etudiants.id_niveau)
+    INNER JOIN filieres ON filieres.id = etudiants.id_niveau); 
+>>>>>>> 07b5fc4ebfa2014115c3e4dcae123a5a70ccedd3
+ 
+ --------------------------------------------------------------------------------------------------------------------------------
+
+
+    nom     |   prenom    |    sexe     |               adresse                | niveau |   filiere    
+------------+-------------+-------------+--------------------------------------+--------+--------------
+ Mason      | Goom        | Agender     | mgoom2p@thetimes.co.uk               | 1      | informatique
+ Tonie      | Stubbins    | Female      | tstubbins2l@symantec.com             | 1      | informatique
+ Venus      | Iacomelli   | Female      | viacomelli2f@hc360.com               | 1      | informatique
+ Alwin      | Scotchmore  | Female      | ascotchmore2d@va.gov                 | 1      | informatique
+ Arabele    | Fleisch     | Male        | afleisch2c@vimeo.com                 | 1      | informatique
+ Natty      | Skellion    | Female      | nskellion29@cbc.ca                   | 1      | informatique
+ Donnie     | Jouannot    | Female      | djouannot26@upenn.edu                | 1      | informatique
+ Nikkie     | Birtle      | Female      | nbirtle20@biglobe.ne.jp              | 1      | informatique
+ Lelia      | Dexter      | Female      | ldexter1z@freewebs.com               | 1      | informatique
+ Brendan    | Pittaway    | Male        | bpittaway1p@trellian.com             | 1      | informatique
+ Farley     | Umney       | Male        | fumney1h@amazonaws.com               | 1      | informatique
+ Maxim      | Schimpke    | Male        | mschimpke1c@infoseek.co.jp           | 1      | informatique
+ Alleyn     | Gilhooly    | Male        | agilhooly1a@columbia.edu             | 1      | informatique
+ Meade      | Abramchik   | Male        | mabramchik15@ow.ly                   | 1      | informatique
+ Rossie     | Gilffilland | Female      | rgilffilland11@moonfruit.com         | 1      | informatique
+ Kai        | Hassin      | Male        | khassint@lulu.com                    | 1      | informatique
+ Gerhardt   | Bassett     | Female      | gbassettl@youtube.com                | 1      | informatique
+ Janetta    | Lamb-shine  | Female      | jlambshinef@tamu.edu                 | 1      | informatique
+ Rosaline   | Zecchii     | Male        | rzecchii0@sciencedirect.com          | 1      | informatique
+ Jefferey   | Dudenie     | Non-binary  | jdudenie2i@desdev.cn                 | 2      | reseau
+ Renelle    | Feldmus     | Male        | rfeldmus2e@studiopress.com           | 2      | reseau
+ Kip        | Allmann     | Female      | kallmann27@reddit.com                | 2      | reseau
+ Haskel     | Cristofol   | Female      | hcristofol25@miitbeian.gov.cn        | 2      | reseau
+ Hinze      | Bergstrand  | Female      | hbergstrand24@reverbnation.com       | 2      | reseau
+ Skip       | Cheetham    | Female      | scheetham21@msn.com                  | 2      | reseau
+ Alexis     | Overal      | Genderqueer | aoveral1u@nytimes.com                | 2      | reseau
+ Goldina    | Robic       | Female      | grobic1r@tinypic.com                 | 2      | reseau
+ Selma      | Parbrook    | Female      | sparbrook1o@washingtonpost.com       | 2      | reseau
+ Arv        | Skone       | Female      | askone1i@livejournal.com             | 2      | reseau
+ Federica   | Mickan      | Male        | fmickan1e@huffingtonpost.com         | 2      | reseau
+ Carter     | Amsden      | Female      | camsden1d@wisc.edu                   | 2      | reseau
+ Anthiathia | Stansell    | Female      | astansell12@google.co.uk             | 2      | reseau
+ Aurelie    | Boobier     | Female      | aboobiers@npr.org                    | 2      | reseau
+ Denis      | Babbs       | Male        | dbabbsq@forbes.com                   | 2      | reseau
+ Issie      | Bodker      | Male        | ibodkere@slashdot.org                | 2      | reseau
+ Guthrey    | Levine      | Male        | glevinec@bbb.org                     | 2      | reseau
+ Yasmeen    | Ghidetti    | Male        | yghidetti8@mashable.com              | 2      | reseau
+ Tandie     | Waldie      | Female      | twaldie7@cargocollective.com         | 2      | reseau
+ Jocelyn    | Hrihorovich | Female      | jhrihorovich2@networkadvertising.org | 2      | reseau
+
